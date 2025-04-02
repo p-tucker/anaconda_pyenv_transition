@@ -107,6 +107,8 @@ def create_venv(environment_name):
 
 #-----------------------------------------------------------------------------------------------------
 # Add new Python versions
+# This is not being used.
+'''
 def pyenv_caller():
     continue_loop = True
     while continue_loop:
@@ -119,7 +121,7 @@ def pyenv_caller():
         more_versions = input("Enter 1 to add more versions. Any other key will exit.")
         if more_versions != 1:
             continue_loop = False
-
+'''
 
 #-----------------------------------------------------------------------------------------------------
 def main_program():
@@ -129,7 +131,7 @@ def main_program():
         print("1 for full backup from Anaconda")
         print("2 for named environment that already exists in Anaconda")
         print("3 for a new virtual environment using Venv")
-        print("Type \'python\' to install a specific version of python")
+        #print("Type \'python\' to install a specific version of python")
         determine_backup = input("or any other key to quit. ")
         print("------------------------------------")
         if determine_backup == '1':
@@ -139,9 +141,10 @@ def main_program():
         elif determine_backup =='3':
             venv_name = input("What is your environments name?")
             create_venv(venv_name)
-        elif determine_backup.upper() == 'PYTHON':
-            print("Lets get you a new version of python using pyenv.")
-            pyenv_caller()
+        #elif determine_backup.upper() == 'PYTHON':
+            # not going to do this anymore
+            # print("Lets get you a new version of python using pyenv.")
+            # pyenv_caller()
         else:
             continue_loop = False
 
