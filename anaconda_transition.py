@@ -109,7 +109,7 @@ def create_venv(environment_name):
             print("\nCreating Environment")
             venv.create(folder_path)
             print("\nActivating the environment")
-            activation_code = ".venv\Scripts\activate"
+            activation_code = ".venv\\Scripts\\activate"
             subprocess.run([activation_code])
             print("\nAdding dependencies")
             restore_code = "py -m pip install -r requirements.txt"
