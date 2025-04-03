@@ -81,7 +81,7 @@ def file_conversion(environment_name,file_name):
             data = line.strip().split('=')
             data.pop()
             print(data)
-            data_line = f"{data[0]} == {data[1]}"
+            data_line = f"{data[0]}=={data[1]}"
             new_file = open(f"C:\\Users\\{username}\\{environment_name}_export_update.txt", "a")
             new_file.write(data_line)
             new_file.write('\n')
