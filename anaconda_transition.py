@@ -28,7 +28,7 @@ def full_export():
     print("Running the following command:")
     print(export_code)
     #subprocess.run([export_code])
-    #get_export = subprocess.run([export_code])
+    get_export = subprocess.run([export_code])
     username = os.getlogin()
     environment_name = "base"
     file_path = Path(f"C:\\Users\\{username}\\anaconda_all_packages.txt")
@@ -47,7 +47,7 @@ def named_export():
     export_code = "conda list --name " + environment_name +" --export > " + environment_name+"_export.txt"
     print(export_code)
     #subprocess.run([export_code])
-    #get_export = subprocess.run([export_code])
+    get_export = subprocess.run([export_code])
     username = os.getlogin()
     file_path = Path(f"C:\\Users\\{username}\\{environment_name}_export.txt")
         
