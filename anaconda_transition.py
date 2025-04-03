@@ -17,10 +17,10 @@
 import itertools
 import subprocess
 import os
+import venv
 from pathlib import Path
 from tkinter import Tk
 from tkinter import filedialog
-
 
 #-----------------------------------------------------------------------------------------------------
 def full_export():
@@ -91,19 +91,25 @@ def file_conversion(environment_name,file_name):
 # Create venv
 def create_venv(environment_name):
     # initiating environment creation if requested
-    print("\nWould you like to activate a new environment in venv using this name?")
-    print("You will be prompted to select a folder to save the virtual environment")  
-    activate = input("Enter 1 to do so or anything else to return to the main menu. ")
-    if activate == '1':
-        Tk().withdraw() # we don't want a full GUI, so keep the root window from appearing
-        folder_path = filedialog.askdirectory() # show an "Open" dialog box and return the path to the selected file
-        print(f"Starting venv at {folder_path}")
-        print("Creating Environment")
-        print("------------------------------------")
-    else:
-        print("No Environment Created")
-        print("Returning to the main menu")
-        print("------------------------------------")
+    print(f"\nDo you have a backup file to use to build your virtual environment?")
+    print("Enter 1 to select the file")
+    print("Enter 2 to create a blank environment")
+    print("Enter anything else to return to the main menu")
+    environment_confirmation = input('Entry: ')
+    if environment_confirmation == '1':
+        print("You will be prompted to select a folder to save the virtual environment")  
+        activate = input("Enter 1 to do so or anything else to return to the main menu. ")
+        if activate == '1':
+            Tk().withdraw() # we don't want a full GUI, so keep the root window from appearing
+            folder_path = filedialog.askdirectory() # show an "Open" dialog box and return the path to the selected file
+            print(f"Starting venv at {folder_path}")
+            venv.create(folder_path)
+            print("Creating Environment")
+            print("------------------------------------")
+        else:
+            print("No Environment Created")
+            print("Returning to the main menu")
+            print("------------------------------------")
 
 #-----------------------------------------------------------------------------------------------------
 # Add new Python versions
