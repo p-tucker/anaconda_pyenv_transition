@@ -7,6 +7,7 @@ from tkinter import Tk
 from tkinter import filedialog
 
 print("Select a text file to convert")
+print("This is expecting a text file (.txt) that was exported from Anaconda.")
 Tk().withdraw() # we don't want a full GUI, so keep the root window from appearing
 file_name = filedialog.askopenfilename()
 file_name_short = file_name[:-4]
