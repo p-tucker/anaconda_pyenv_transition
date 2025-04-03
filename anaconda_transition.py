@@ -121,24 +121,6 @@ def create_venv(environment_name):
             print("------------------------------------")
 
 #-----------------------------------------------------------------------------------------------------
-# Add new Python versions
-# This is not being used.
-'''
-def pyenv_caller():
-    continue_loop = True
-    while continue_loop:
-        pyversion = input("What version of python do you need installed?")
-        pyscript = f"pyenv install {pyversion}"
-        subprocess.run([pyscript])
-        print("Here are the versions you currently have installed: ")
-        subprocess.run("pyenv versions")
-        print("This program is not configured to remove any versions")
-        more_versions = input("Enter 1 to add more versions. Any other key will exit.")
-        if more_versions != 1:
-            continue_loop = False
-'''
-
-#-----------------------------------------------------------------------------------------------------
 def main_program():
     continue_loop = True
     while continue_loop: 
@@ -156,10 +138,6 @@ def main_program():
         elif determine_backup =='3':
             venv_name = input("What is your environments name?")
             create_venv(venv_name)
-        #elif determine_backup.upper() == 'PYTHON':
-            # not going to do this anymore
-            # print("Lets get you a new version of python using pyenv.")
-            # pyenv_caller()
         else:
             continue_loop = False
 
