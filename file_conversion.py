@@ -1,7 +1,7 @@
 # If you only need to convert your files you can run this script
 
 import itertools
-#import os
+import os
 from pathlib import Path
 from tkinter import Tk
 from tkinter import filedialog
@@ -27,3 +27,4 @@ with open(file_name, 'r') as exported_file:
         new_file.write(data_line)
         new_file.write('\n')
         new_file.close()
+    print("File conversion is complete.")
